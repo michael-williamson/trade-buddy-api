@@ -47,6 +47,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(HttpMethod.GET,"*").permitAll()
         .antMatchers(HttpMethod.DELETE,"*").permitAll()
         .antMatchers(HttpMethod.PUT,"*").permitAll()
+                .mvcMatchers("/").permitAll()
                 .mvcMatchers("/api/authorize/trades").authenticated()
                 .mvcMatchers("/api/authorize/user").authenticated()
                 .and()
@@ -57,7 +58,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("108.69.29.46","108.69.29.46"));
+        configuration.setAllowedOrigins(Arrays.asList("108.69.29.46","https://dev-3px0g9gd.us.auth0.com/"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","PUT","OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("authorization","content-type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
