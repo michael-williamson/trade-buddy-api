@@ -1,5 +1,5 @@
 auth0:
-  audience: https://trade-buddy-api.herokuapp.com/
+  audience: https://trade-buddy-api.herokuapp.com/api/authorize
 spring:
   security:
     oauth2:
