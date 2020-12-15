@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "108.69.29.46", maxAge = 3600)
+@CrossOrigin(origins = "https://michael-williamson.github.io/trade_buddy_ts/", maxAge = 3600)
 @RestController
 @RequestMapping(path = "api/authorize", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AnalysisController {
@@ -30,7 +30,7 @@ public class AnalysisController {
     private UserService userService; 
 
     
-    @CrossOrigin("108.69.29.46")
+    @CrossOrigin("https://michael-williamson.github.io/trade_buddy_ts/")
     @PostMapping(value = "/analysis")
     public Analysis getAnalysis(@RequestBody ModalFormData formData, Principal principal){
 
