@@ -58,7 +58,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("https://main--trade-buddy.netlify.app,https://main--trade-buddy.netlify.app/"));
+        configuration.setAllowedOrigins(Arrays.asList("https://main--trade-buddy.netlify.app,https://trade-buddy.netlify.app/"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","PUT","OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("authorization","Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
         "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
