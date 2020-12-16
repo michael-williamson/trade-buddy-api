@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "https://michael-williamson.github.io/trade_buddy_ts/", maxAge = 3600)
+@CrossOrigin(origins = "https://main--trade-buddy.netlify.app/", maxAge = 3600)
 @RestController
-@RequestMapping(path = "api/authorize", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/api/authorize", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TradesController {
     @Autowired
     private TradeService tradeService; 
@@ -30,7 +30,6 @@ public class TradesController {
     @Autowired
     private UserService userService; 
 
-    @CrossOrigin("https://michael-williamson.github.io/trade_buddy_ts/")
     @PostMapping(value = "/trades")
     public List<Trades> createTrade(@RequestBody Trades trades,Principal principal){
         final User userInstance = userService.findByAuthId(principal.getName());
@@ -41,7 +40,6 @@ public class TradesController {
 
 }
 
-    @CrossOrigin("https://michael-williamson.github.io/trade_buddy_ts/")
     @PutMapping(value = "/trades")
     public List<Trades> updateTrade(@RequestBody Trades trade,Principal principal){
         tradeService.save(trade);
@@ -49,7 +47,6 @@ public class TradesController {
             return userInstance.getTrades(); 
 }
 
-    @CrossOrigin("https://michael-williamson.github.io/trade_buddy_ts/")
     @DeleteMapping(value = "/trades/{id}")
     public List<Trades> deleteTrade(@PathVariable Long id,Principal principal){
         tradeService.deleteById(id);
@@ -57,8 +54,6 @@ public class TradesController {
             return userInstance.getTrades(); 
 }
 
-
-    @CrossOrigin("https://michael-williamson.github.io/trade_buddy_ts/")
     @GetMapping(value = "/trades")
     public List<Trades> getUserTrades(Principal principal){
         User user = userService.findByAuthId(principal.getName());
