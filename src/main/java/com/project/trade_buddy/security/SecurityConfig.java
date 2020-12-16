@@ -47,7 +47,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers(HttpMethod.GET,"*").permitAll()
         .antMatchers(HttpMethod.DELETE,"*").permitAll()
         .antMatchers(HttpMethod.PUT,"*").permitAll()
-                .mvcMatchers("/api/authorize").permitAll()
+                .mvcMatchers("/").permitAll()
                 .mvcMatchers("/api/authorize/trades").authenticated()
                 .mvcMatchers("/api/authorize/user").authenticated()
                 .and()
