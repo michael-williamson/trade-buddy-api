@@ -53,7 +53,7 @@ public class TradesController {
         final User userInstance = userService.findByAuthId(principal.getName());
             return userInstance.getTrades(); 
 }
-
+    @CrossOrigin(origins = "https://main--trade-buddy.netlify.app")
     @GetMapping(value = "/trades")
     public List<Trades> getUserTrades(Principal principal){
         User user = userService.findByAuthId(principal.getName());
